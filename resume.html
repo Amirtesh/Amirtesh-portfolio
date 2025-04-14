@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirtesh Raghuram - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Calibri', sans-serif;
+            color: #333;
+            background-color: #f5f5f5;
+            line-height: 1.5;
+        }
+
+        .resume-container {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto;
+            display: flex;
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 2.4in;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-name {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .profile-title {
+            font-size: 15px;
+            color: #ecf0f1;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .sidebar-title:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #3498db;
+        }
+
+        .sidebar-content {
+            font-size: 13px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #3498db;
+        }
+
+        .skill-list {
+            list-style-type: none;
+        }
+
+        .skill-item {
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .skill-item:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        .main-content {
+            width: 6.1in;
+            padding: 25px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .main-section {
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .main-title:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 70px;
+            height: 2px;
+            background-color: #3498db;
+        }
+
+        .education-item, .project-item, .achievement-item {
+            margin-bottom: 12px;
+        }
+
+        .education-title, .project-title, .achievement-title {
+            font-weight: bold;
+            font-size: 15px;
+            color: #2c3e50;
+        }
+
+        .education-subtitle {
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        .education-date, .project-date {
+            color: #7f8c8d;
+            font-size: 13px;
+        }
+
+        .project-description, .achievement-description {
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .project-bullet, .achievement-bullet {
+            margin-left: 15px;
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 3px;
+        }
+
+        .project-bullet:before, .achievement-bullet:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .tool-item {
+            background-color: #ecf0f1;
+            border-radius: 15px;
+            padding: 3px 10px;
+            margin: 3px;
+            font-size: 12px;
+            color: #2c3e50;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                height: 100%;
+            }
+
+            .tool-item {
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-name">AMIRTESH RAGHURAM</div>
+                <div class="profile-title">Biotechnology Student</div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <div><a href="mailto:amirtesh21.5@gmail.com" style="color: white; text-decoration: none;">amirtesh21.5@gmail.com</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>+91 9353724370</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <div><a href="https://github.com/amirtesh" target="_blank" style="color: white; text-decoration: none;">github.com/amirtesh</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🔗</div>
+                    <div><a href="https://in.linkedin.com/in/amirtesh-raghuram-90161828a" target="_blank" style="color: white; text-decoration: none;">LinkedIn Profile</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🏫</div>
+                    <div>VIT, Vellore</div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Data Science and Machine Learning</div>
+                <div class="sidebar-content">
+                    <div class="skill-list">
+                        <div class="skill-item">Python (NumPy, Pandas, Scikit-learn)</div>
+                        <div class="skill-item">PyTorch & TensorFlow</div>
+                        <div class="skill-item">R (dplyr, ggplot2)</div>
+                        <div class="skill-item">Matplotlib/Seaborn</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Bioinformatics</div>
+                <div class="sidebar-content">
+                    <div class="skill-list">
+                        <div class="skill-item">RNA-Seq Analysis</div>
+                        <div class="skill-item">Single-Cell RNA-Seq (Seurat)</div>
+                        <div class="skill-item">ChIP-Seq Analysis</div>
+                        <div class="skill-item">Variant Calling</div>
+                        <div class="skill-item">Genome Assembly</div>
+                        <div class="skill-item">DNA Methylation Analysis</div>
+                        <div class="skill-item">In Silico Vaccine Design (Full Pipeline)</div>
+                        <div class="skill-item">BioPython</div>
+                        <div class="skill-item">GWAS (PLINK)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Computational Drug Discovery</div>
+                <div class="sidebar-content">
+                    <div class="skill-list">
+                        <div class="skill-item">Protein-Ligand Docking</div>
+                        <div class="skill-item">Molecular Dynamics (GROMACS)</div>
+                        <div class="skill-item">MMPBSA Calculations (gmx_MMPBSA)</div>
+                        <div class="skill-item">RDKit Cheminformatics</div>
+                        <div class="skill-item">PyMol,Chimera,Discovery Studio</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="main-section">
+                <div class="main-title">Education</div>
+                <div class="education-item">
+                    <div class="education-title">B.Tech Biotechnology</div>
+                    <div class="education-subtitle">Vellore Institute of Technology, Vellore</div>
+                    <div class="education-date">2023 - 2027 (Expected)</div>
+                </div>
+            </div>
+
+            <div class="main-section">
+                <div class="main-title">Research Projects</div>
+                <div class="project-item">
+                    <div class="project-title">Natural Plant-Based Inhibitors for Diabetes Treatment</div>
+                    <div class="project-description">
+                        <div class="project-bullet">Collaborating with a PhD scholar to identify natural plant compounds as alpha-amylase inhibitors</div>
+                        <div class="project-bullet">Implementing computational screening, molecular docking, and binding affinity calculations</div>
+                        <div class="project-bullet">Performing molecular dynamics simulations to evaluate stability of protein-ligand complexes</div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Natural Inhibitors for Glaucoma Treatment</div>
+                    <div class="project-description">
+                        <div class="project-bullet">Independent research identifying plant-based inhibitors of human carbonic anhydrase II</div>
+                        <div class="project-bullet">Developing a computational pipeline for high-throughput virtual screening</div>
+                        <div class="project-bullet">Conducting MD simulations with subsequent MM-PB/GBSA calculations for binding free energy analysis</div>
+                    </div>
+                </div>
+            </div>
+
+      <div class="main-section">
+        <div class="main-title">Key Achievements</div>
+        <div class="achievement-item">
+          <div class="achievement-bullet">Developed <a href="https://github.com/Amirtesh/Pytorch-Torchify" target="_blank">Torchify</a>, a Python library that simplifies PyTorch workflows with enhanced model API functions; published on PyPI with 2,200+ downloaded to date</div>
+          <div class="achievement-bullet">Created <a href="https://github.com/Amirtesh/Automated-Virtual-Screening" target="_blank">Automated-Virtual-Screening</a>, a binary executable that automates ligand screening using Vina, Smina, and QVina with features for file conversion, parallel docking, and results management</div>
+          <div class="achievement-bullet">Proficient in complete computational drug discovery pipelines from virtual screening to MD simulations and binding free energy calculations</div>
+          <div class="achievement-bullet">Proficient with next-generation sequencing data analysis and interpretation</div>
+        </div>
+      </div>
+
+            <div class="main-section">
+                <div class="main-title">Bioinformatics Servers & Web Tools</div>
+                <div class="tools-list">
+                    <div class="tool-item">SwissDock</div>
+                    <div class="tool-item">SwissADME</div>
+                    <div class="tool-item">Swiss Target Prediction</div>
+                    <div class="tool-item">Swiss Similarity</div>
+                    <div class="tool-item">pkCSM</div>
+                    <div class="tool-item">ProTox 3.0</div>
+                    <div class="tool-item">MolSoft</div>
+                    <div class="tool-item">AlphaFold</div>
+                    <div class="tool-item">SWISS-MODEL</div>
+                    <div class="tool-item">I-TASSER</div>
+                    <div class="tool-item">Phyre2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

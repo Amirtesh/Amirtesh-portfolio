@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirtesh Raghuram - Curriculum Vitae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            color: #000;
+            background-color: #fff;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .cv-container {
+            width: 8.5in;
+            margin: 0 auto;
+            padding: 20px 40px;
+            background-color: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 15px;
+        }
+
+        .name {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            font-size: 11pt;
+            line-height: 1.4;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #000;
+        }
+
+        .subsection {
+            margin-bottom: 15px;
+        }
+
+        .subsection-title {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .subsection-details {
+            font-size: 11pt;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            font-style: italic;
+        }
+
+        .date {
+            font-weight: normal;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            font-size: 11pt;
+            margin-bottom: 5px;
+        }
+
+        .skills-list {
+            column-count: 2;
+            column-gap: 20px;
+            list-style-type: disc;
+            margin-left: 25px;
+        }
+
+        .tools-list {
+            margin-top: 5px;
+        }
+
+        a {
+            color: #000;
+        }
+
+        .contact-link {
+            cursor: pointer;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+            .cv-container {
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="name">Amirtesh Raghuram</div>
+            <div class="contact-info">
+                Email: <a href="mailto:amirtesh21.5@gmail.com">amirtesh21.5@gmail.com</a> | Phone: <a href="tel:+919353724370">+91 9353724370</a><br>
+                GitHub: <a href="https://github.com/amirtesh" target="_blank">github.com/amirtesh</a> | LinkedIn: <a href="https://in.linkedin.com/in/amirtesh-raghuram-90161828a" target="_blank">in.linkedin.com/in/amirtesh-raghuram-90161828a</a><br>
+                Vellore Institute of Technology, Vellore
+            </div>
+        </div>
+
+        <!-- Profile Summary -->
+        <div class="section">
+            <div class="section-title">Profile Summary</div>
+            <div class="subsection">
+                <div class="subsection-details">
+                   I'm a Biotechnology undergrad at VIT (CGPA: 9.05) with a strong interest in computational drug discovery, bioinformatics, and machine learning. I've built end-to-end pipelines for tasks like virtual screening, molecular dynamics simulations, and NGS data analysis. I enjoy creating tools that make complex workflows simpler, and I’m driven by the goal of turning data into real biological insight.
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="subsection">
+                <div class="subsection-title">B.Tech Biotechnology</div>
+                <div class="subsection-details"><span class="institution">Vellore Institute of Technology, Vellore</span></div>
+                <div class="subsection-details"><span class="date">2023 - 2027 (Expected)</span></div>
+            </div>
+        </div>
+
+        <!-- Research Projects -->
+        <div class="section">
+            <div class="section-title">Research Projects</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Natural Plant-Based Inhibitors for Diabetes Treatment</div>
+                <ul>
+                    <li>Collaborative research with PhD scholar identifying natural plant compounds as alpha-amylase inhibitors</li>
+                    <li>Implementation of computational screening methods, molecular docking, and binding affinity calculations</li>
+                    <li>Molecular dynamics simulations to evaluate stability of protein-ligand complexes</li>
+                    <li>Identification of lead compounds with potential therapeutic applications</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">Natural Inhibitors for Glaucoma Treatment</div>
+                <ul>
+                    <li>Independent research identifying plant-based inhibitors of human carbonic anhydrase II</li>
+                    <li>Development of computational pipeline for high-throughput virtual screening</li>
+                    <li>MM-PB/GBSA calculations for binding free energy analysis</li>
+                    <li>Structure-activity relationship investigations for lead optimization</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Data Science and Machine Learning</div>
+                <ul class="skills-list">
+                    <li>Python (NumPy, Pandas, Scikit-learn)</li>
+                    <li>PyTorch & TensorFlow</li>
+                    <li>R (dplyr, ggplot2)</li>
+                    <li>Matplotlib/Seaborn</li>
+                    <li>Statistical Analysis</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">Bioinformatics</div>
+                <ul class="skills-list">
+                    <li>RNA-Seq Analysis</li>
+                    <li>Single-Cell RNA-Seq (Seurat)</li>
+                    <li>ChIP-Seq Analysis</li>
+                    <li>Variant Calling</li>
+                    <li>Genome Assembly</li>
+                    <li>DNA Methylation Analysis</li>
+                    <li>In Silico Vaccine Design</li>
+                    <li>BioPython</li>
+                    <li>GWAS (PLINK)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">Computational Drug Discovery</div>
+                <ul class="skills-list">
+                    <li>Protein-Ligand Docking</li>
+                    <li>Molecular Dynamics (GROMACS)</li>
+                    <li>MMPBSA Calculations (gmx_MMPBSA)</li>
+                    <li>RDKit Cheminformatics</li>
+                    <li>PyMol, Chimera, Discovery Studio</li>
+                    <li>Virtual Screening Workflows</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Software Development -->
+        <div class="section">
+            <div class="section-title">Software Contributions</div>
+            <div class="subsection">
+                <ul>
+                    <li><strong>Torchify:</strong> Python library simplifying PyTorch workflows with enhanced model API functions; published on PyPI with 2,200+ downloads (<a href="https://github.com/Amirtesh/Pytorch-Torchify" target="_blank">github.com/Amirtesh/Pytorch-Torchify</a>)</li>
+                    <li><strong>Automated-Virtual-Screening:</strong> Binary executable automating ligand screening using Vina, Smina, and QVina with features for file conversion, parallel docking, and results management (<a href="https://github.com/Amirtesh/Automated-Virtual-Screening" target="_blank">github.com/Amirtesh/Automated-Virtual-Screening</a>)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="section">
+            <div class="section-title">Key Technical Proficiencies</div>
+            <div class="subsection">
+                <ul>
+                    <li>Complete computational drug discovery pipelines from virtual screening to MD simulations and binding free energy calculations</li>
+                    <li>Next-generation sequencing data analysis and interpretation</li>
+                    <li>Development of custom computational workflows for high-throughput data processing</li>
+                    <li>Implementation of machine learning approaches for biological data analysis</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="section">
+            <div class="section-title">Bioinformatics Tools & Resources</div>
+            <div class="subsection">
+                <div class="tools-list">
+                    SwissDock, SwissADME, Swiss Target Prediction, Swiss Similarity, pkCSM, ProTox 3.0, MolSoft, AlphaFold, SWISS-MODEL, I-TASSER, Phyre2, BLAST, Galaxy, HMMER, KEGG, BioConductor
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
