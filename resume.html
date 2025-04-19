@@ -34,52 +34,51 @@
             color: white;
             padding: 20px;
             box-sizing: border-box;
-            overflow-y: auto;
         }
 
         .profile {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .profile-name {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
             margin-bottom: 5px;
             letter-spacing: 1px;
         }
 
         .profile-title {
-            font-size: 15px;
+            font-size: 14px;
             color: #ecf0f1;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .contact-info {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
-            font-size: 13px;
+            margin-bottom: 6px;
+            font-size: 12px;
         }
 
         .contact-icon {
-            width: 20px;
-            margin-right: 10px;
+            width: 18px;
+            margin-right: 8px;
             text-align: center;
         }
 
         .sidebar-section {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .sidebar-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             position: relative;
             text-transform: uppercase;
         }
@@ -87,24 +86,24 @@
         .sidebar-title:after {
             content: "";
             position: absolute;
-            bottom: -5px;
+            bottom: -3px;
             left: 0;
-            width: 50px;
+            width: 45px;
             height: 2px;
             background-color: #3498db;
         }
 
         .sidebar-content {
-            font-size: 13px;
+            font-size: 11px;
         }
 
         .skill-category {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .skill-category-title {
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             color: #3498db;
         }
 
@@ -113,9 +112,9 @@
         }
 
         .skill-item {
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             position: relative;
-            padding-left: 15px;
+            padding-left: 12px;
         }
 
         .skill-item:before {
@@ -133,14 +132,14 @@
         }
 
         .main-section {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .main-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #2c3e50;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             position: relative;
             text-transform: uppercase;
         }
@@ -156,27 +155,28 @@
         }
 
         .education-item, .project-item, .achievement-item {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .education-title, .project-title, .achievement-title {
             font-weight: bold;
-            font-size: 15px;
+            font-size: 14px;
             color: #2c3e50;
         }
 
         .education-subtitle {
             font-style: italic;
             margin-bottom: 4px;
+            font-size: 12px;
         }
 
         .education-date, .project-date {
             color: #7f8c8d;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .project-description, .achievement-description {
-            font-size: 13px;
+            font-size: 15px;
             margin-top: 5px;
         }
 
@@ -185,6 +185,7 @@
             position: relative;
             padding-left: 15px;
             margin-bottom: 3px;
+            font-size: 15px;
         }
 
         .project-bullet:before, .achievement-bullet:before {
@@ -197,15 +198,15 @@
         .tools-list {
             display: flex;
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .tool-item {
             background-color: #ecf0f1;
             border-radius: 15px;
-            padding: 3px 10px;
-            margin: 3px;
-            font-size: 12px;
+            padding: 2px 8px;
+            margin: 2px;
+            font-size: 11px;
             color: #2c3e50;
         }
 
@@ -279,9 +280,23 @@
                         <div class="skill-item">Variant Calling</div>
                         <div class="skill-item">Genome Assembly</div>
                         <div class="skill-item">DNA Methylation Analysis</div>
-                        <div class="skill-item">In Silico Vaccine Design (Full Pipeline)</div>
+                        <div class="skill-item">In Silico Vaccine Design</div>
                         <div class="skill-item">BioPython</div>
                         <div class="skill-item">GWAS (PLINK)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Cancer Genomics</div>
+                <div class="sidebar-content">
+                    <div class="skill-list">
+                        <div class="skill-item">Somatic Mutation Analysis</div>
+                        <div class="skill-item">Tumor Heterogeneity Analysis</div>
+                        <div class="skill-item">Mutation Signature Analysis</div>
+                        <div class="skill-item">Co-occurrence Analysis</div>
+                        <div class="skill-item">VAF-based Clonal Identification</div>
+                        <div class="skill-item">Oncogenic Driver Identification</div>
                     </div>
                 </div>
             </div>
@@ -332,15 +347,16 @@
                 </div>
             </div>
 
-      <div class="main-section">
-        <div class="main-title">Key Achievements</div>
-        <div class="achievement-item">
-          <div class="achievement-bullet">Developed <a href="https://github.com/Amirtesh/Pytorch-Torchify" target="_blank">Torchify</a>, a Python library that simplifies PyTorch workflows with enhanced model API functions; published on PyPI with 2,200+ downloads to date</div>
-          <div class="achievement-bullet">Created <a href="https://github.com/Amirtesh/Automated-Virtual-Screening" target="_blank">Automated-Virtual-Screening</a>, a binary executable that automates ligand screening using Vina, Smina, and QVina with features for file conversion, parallel docking, and results management</div>
-          <div class="achievement-bullet">Proficient in complete computational drug discovery pipelines from virtual screening to MD simulations and binding free energy calculations</div>
-          <div class="achievement-bullet">Proficient with next-generation sequencing data analysis and interpretation</div>
-        </div>
-      </div>
+            <div class="main-section">
+                <div class="main-title">Key Achievements</div>
+                <div class="achievement-item">
+                    <div class="achievement-bullet">Developed <a href="https://github.com/Amirtesh/Pytorch-Torchify" target="_blank">Torchify</a>, a Python library that simplifies PyTorch workflows with enhanced model API functions; published on PyPI with 2,200+ downloads to date</div>
+                    <div class="achievement-bullet">Created <a href="https://github.com/Amirtesh/Automated-Virtual-Screening" target="_blank">Automated-Virtual-Screening</a>, a binary executable that automates ligand screening using Vina, Smina, and QVina with features for file conversion, parallel docking, and results management</div>
+                    <div class="achievement-bullet">Proficient in complete computational drug discovery pipelines from virtual screening to MD simulations and binding free energy calculations</div>
+                    <div class="achievement-bullet">Proficient with next-generation sequencing data analysis and interpretation</div>
+                    <div class="achievement-bullet">Proficient in cancer genomics data analysis including somatic mutation profiling, mutation signature analysis, tumor heterogeneity analysis and clonal identification</div>
+                </div>
+            </div>
 
             <div class="main-section">
                 <div class="main-title">Bioinformatics Servers & Web Tools</div>
@@ -356,10 +372,18 @@
                     <div class="tool-item">SWISS-MODEL</div>
                     <div class="tool-item">I-TASSER</div>
                     <div class="tool-item">Phyre2</div>
+                    <div class="tool-item">BLAST</div>
+                    <div class="tool-item">Galaxy</div>
+                    <div class="tool-item">HOMER</div>
+                    <div class="tool-item">KEGG</div>
+                    <div class="tool-item">BioConductor</div>
+                    <div class="tool-item">rainfallPlot</div>
+                    <div class="tool-item">oncoplot</div>
+                    <div class="tool-item">Oncodrive</div>
+                    <div class="tool-item">maftools</div>
                 </div>
             </div>
         </div>
     </div>
 </body>
 </html>
-
