@@ -34,9 +34,302 @@
             background-attachment: fixed;
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
         }
         
-        /* Animated background particles */
+        /* Animated background container */
+        .background-animations {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        
+        /* Neural Network Animation */
+        .neural-network {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .neuron {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: neuronPulse 3s ease-in-out infinite;
+        }
+        
+        .synapse {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            transform-origin: left center;
+            animation: synapseFlow 2s linear infinite;
+        }
+        
+        @keyframes neuronPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 10px var(--accent-color);
+            }
+            50% { 
+                transform: scale(1.5);
+                box-shadow: 0 0 20px var(--accent-color);
+            }
+        }
+        
+        @keyframes synapseFlow {
+            0% {
+                background: linear-gradient(90deg, transparent, transparent, transparent);
+            }
+            50% {
+                background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            }
+            100% {
+                background: linear-gradient(90deg, transparent, transparent, transparent);
+            }
+        }
+        
+        /* Molecular Docking Animation */
+        .molecular-docking {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 300px;
+            height: 200px;
+            opacity: 0.08;
+        }
+        
+        .enzyme {
+            position: absolute;
+            width: 120px;
+            height: 80px;
+            background: radial-gradient(ellipse, rgba(78, 205, 196, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            border: 2px dashed var(--accent-tertiary);
+            animation: enzymeFloat 4s ease-in-out infinite;
+        }
+        
+        .substrate {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            border: 2px solid var(--accent-secondary);
+            animation: substrateDock 6s ease-in-out infinite;
+        }
+        
+        .active-site {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            border: 2px dashed var(--accent-color);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: activeSitePulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes enzymeFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        
+        @keyframes substrateDock {
+            0% { 
+                transform: translate(200px, 100px) scale(1);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translate(100px, 50px) scale(1.2);
+                opacity: 0.8;
+            }
+            100% { 
+                transform: translate(60px, 40px) scale(0.8);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes activeSitePulse {
+            0%, 100% { 
+                border-color: var(--accent-color);
+                box-shadow: 0 0 5px var(--accent-color);
+            }
+            50% { 
+                border-color: var(--accent-secondary);
+                box-shadow: 0 0 15px var(--accent-secondary);
+            }
+        }
+        
+        /* MD Simulation Animation */
+        .md-simulation {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            width: 400px;
+            height: 300px;
+            opacity: 0.06;
+        }
+        
+        .protein-structure {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--accent-tertiary);
+            border-radius: 20px;
+            animation: proteinVibration 1.5s ease-in-out infinite;
+        }
+        
+        .water-molecule {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            animation: brownianMotion 3s linear infinite;
+        }
+        
+        .force-vector {
+            position: absolute;
+            width: 2px;
+            height: 30px;
+            background: linear-gradient(to bottom, var(--accent-secondary), transparent);
+            animation: forceVectorFlicker 2s ease-in-out infinite;
+        }
+        
+        @keyframes proteinVibration {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg);
+                border-color: var(--accent-tertiary);
+            }
+            25% { 
+                transform: translate(2px, -1px) rotate(1deg);
+                border-color: var(--accent-color);
+            }
+            50% { 
+                transform: translate(-1px, 2px) rotate(-1deg);
+                border-color: var(--accent-secondary);
+            }
+            75% { 
+                transform: translate(-2px, -1px) rotate(0.5deg);
+                border-color: var(--accent-color);
+            }
+        }
+        
+        @keyframes brownianMotion {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(20px, -15px); }
+            50% { transform: translate(-10px, 25px); }
+            75% { transform: translate(15px, 10px); }
+            100% { transform: translate(0, 0); }
+        }
+        
+        @keyframes forceVectorFlicker {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* DNA Helix Animation */
+        .dna-helix {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 100px;
+            height: 400px;
+            opacity: 0.05;
+        }
+        
+        .dna-strand {
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-color), var(--accent-secondary), var(--accent-tertiary));
+            animation: dnaRotation 8s linear infinite;
+        }
+        
+        .dna-strand:nth-child(2) {
+            animation-delay: -4s;
+            right: 0;
+        }
+        
+        .base-pair {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+            animation: basePairFlicker 3s ease-in-out infinite;
+        }
+        
+        @keyframes dnaRotation {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        
+        @keyframes basePairFlicker {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Cellular Network */
+        .cellular-network {
+            position: absolute;
+            top: 60%;
+            right: 5%;
+            width: 200px;
+            height: 200px;
+            opacity: 0.07;
+        }
+        
+        .cell {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--accent-tertiary);
+            border-radius: 50%;
+            animation: cellDivision 5s ease-in-out infinite;
+        }
+        
+        .cell-connection {
+            position: absolute;
+            height: 1px;
+            background: var(--accent-color);
+            animation: signalTransduction 2s linear infinite;
+        }
+        
+        @keyframes cellDivision {
+            0%, 100% { 
+                transform: scale(1);
+                border-color: var(--accent-tertiary);
+            }
+            50% { 
+                transform: scale(1.3);
+                border-color: var(--accent-color);
+            }
+        }
+        
+        @keyframes signalTransduction {
+            0% {
+                box-shadow: 0 0 0 var(--accent-color);
+            }
+            50% {
+                box-shadow: 0 0 10px var(--accent-color);
+            }
+            100% {
+                box-shadow: 0 0 0 var(--accent-color);
+            }
+        }
+        
+        /* Existing styles remain the same */
         body::before {
             content: '';
             position: fixed;
@@ -656,6 +949,13 @@
             .documents-content {
                 grid-template-columns: 1fr;
             }
+            
+            .molecular-docking,
+            .md-simulation,
+            .dna-helix,
+            .cellular-network {
+                opacity: 0.03;
+            }
         }
         
         /* Scroll animations */
@@ -677,6 +977,39 @@
     </style>
 </head>
 <body>
+    <!-- Animated Background Elements -->
+    <div class="background-animations">
+        <!-- Neural Network -->
+        <div class="neural-network" id="neuralNetwork"></div>
+        
+        <!-- Molecular Docking Animation -->
+        <div class="molecular-docking">
+            <div class="enzyme">
+                <div class="active-site"></div>
+            </div>
+            <div class="substrate"></div>
+        </div>
+        
+        <!-- MD Simulation -->
+        <div class="md-simulation" id="mdSimulation">
+            <div class="protein-structure"></div>
+        </div>
+        
+        <!-- DNA Helix -->
+        <div class="dna-helix">
+            <div class="dna-strand"></div>
+            <div class="dna-strand"></div>
+            <div class="base-pair" style="top: 10%;"></div>
+            <div class="base-pair" style="top: 30%;"></div>
+            <div class="base-pair" style="top: 50%;"></div>
+            <div class="base-pair" style="top: 70%;"></div>
+            <div class="base-pair" style="top: 90%;"></div>
+        </div>
+        
+        <!-- Cellular Network -->
+        <div class="cellular-network" id="cellularNetwork"></div>
+    </div>
+
     <header>
         <div class="profile-container">
             <h1 class="profile-name">Amirtesh Raghuram</h1>
@@ -882,6 +1215,138 @@
     </footer>
 
     <script>
+        // Create Neural Network
+        function createNeuralNetwork() {
+            const container = document.getElementById('neuralNetwork');
+            const neurons = [];
+            const synapses = [];
+            
+            // Create neurons in layers
+            const layers = [8, 12, 8, 4]; // Layer sizes
+            const layerSpacing = window.innerWidth / (layers.length + 1);
+            
+            layers.forEach((nodeCount, layerIndex) => {
+                const layerNeurons = [];
+                const layerY = window.innerHeight / (nodeCount + 1);
+                
+                for (let i = 0; i < nodeCount; i++) {
+                    const neuron = document.createElement('div');
+                    neuron.className = 'neuron';
+                    neuron.style.left = (layerIndex + 1) * layerSpacing + 'px';
+                    neuron.style.top = (i + 1) * layerY + 'px';
+                    neuron.style.animationDelay = Math.random() * 3 + 's';
+                    container.appendChild(neuron);
+                    layerNeurons.push({
+                        element: neuron,
+                        x: (layerIndex + 1) * layerSpacing,
+                        y: (i + 1) * layerY
+                    });
+                }
+                neurons.push(layerNeurons);
+            });
+            
+            // Create synapses between layers
+            for (let layer = 0; layer < neurons.length - 1; layer++) {
+                neurons[layer].forEach(fromNeuron => {
+                    neurons[layer + 1].forEach(toNeuron => {
+                        if (Math.random() > 0.3) { // Random connections
+                            const synapse = document.createElement('div');
+                            synapse.className = 'synapse';
+                            
+                            const dx = toNeuron.x - fromNeuron.x;
+                            const dy = toNeuron.y - fromNeuron.y;
+                            const length = Math.sqrt(dx * dx + dy * dy);
+                            const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                            
+                            synapse.style.left = fromNeuron.x + 'px';
+                            synapse.style.top = fromNeuron.y + 'px';
+                            synapse.style.width = length + 'px';
+                            synapse.style.transform = `rotate(${angle}deg)`;
+                            synapse.style.animationDelay = Math.random() * 2 + 's';
+                            
+                            container.appendChild(synapse);
+                        }
+                    });
+                });
+            }
+        }
+        
+        // Create MD Simulation elements
+        function createMDSimulation() {
+            const container = document.getElementById('mdSimulation');
+            
+            // Add water molecules
+            for (let i = 0; i < 20; i++) {
+                const water = document.createElement('div');
+                water.className = 'water-molecule';
+                water.style.left = Math.random() * 350 + 'px';
+                water.style.top = Math.random() * 250 + 'px';
+                water.style.animationDelay = Math.random() * 3 + 's';
+                water.style.animationDuration = (2 + Math.random() * 2) + 's';
+                container.appendChild(water);
+            }
+            
+            // Add force vectors
+            for (let i = 0; i < 15; i++) {
+                const vector = document.createElement('div');
+                vector.className = 'force-vector';
+                vector.style.left = Math.random() * 380 + 'px';
+                vector.style.top = Math.random() * 270 + 'px';
+                vector.style.transform = `rotate(${Math.random() * 360}deg)`;
+                vector.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(vector);
+            }
+        }
+        
+        // Create Cellular Network
+        function createCellularNetwork() {
+            const container = document.getElementById('cellularNetwork');
+            const cells = [];
+            
+            // Create cells
+            for (let i = 0; i < 6; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                const x = (i % 3) * 80 + 20;
+                const y = Math.floor(i / 3) * 80 + 20;
+                cell.style.left = x + 'px';
+                cell.style.top = y + 'px';
+                cell.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(cell);
+                cells.push({ element: cell, x, y });
+            }
+            
+            // Create connections
+            cells.forEach((cell, index) => {
+                cells.forEach((otherCell, otherIndex) => {
+                    if (index !== otherIndex && Math.random() > 0.5) {
+                        const connection = document.createElement('div');
+                        connection.className = 'cell-connection';
+                        
+                        const dx = otherCell.x - cell.x + 20;
+                        const dy = otherCell.y - cell.y + 20;
+                        const length = Math.sqrt(dx * dx + dy * dy);
+                        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                        
+                        connection.style.left = cell.x + 20 + 'px';
+                        connection.style.top = cell.y + 20 + 'px';
+                        connection.style.width = length + 'px';
+                        connection.style.transform = `rotate(${angle}deg)`;
+                        connection.style.animationDelay = Math.random() * 2 + 's';
+                        
+                        container.appendChild(connection);
+                    }
+                });
+            });
+        }
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            createNeuralNetwork();
+            createMDSimulation();
+            createCellularNetwork();
+        });
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
@@ -1003,6 +1468,21 @@
             }
         `;
         document.head.appendChild(style);
+
+        // Responsive animation adjustments
+        function adjustAnimationsForMobile() {
+            if (window.innerWidth <= 768) {
+                // Reduce animation complexity on mobile
+                document.querySelectorAll('.neuron, .water-molecule').forEach(el => {
+                    if (Math.random() > 0.5) {
+                        el.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('resize', adjustAnimationsForMobile);
+        adjustAnimationsForMobile();
     </script>
 </body>
 </html>
