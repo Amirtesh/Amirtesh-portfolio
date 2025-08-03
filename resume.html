@@ -12,89 +12,112 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Calibri', sans-serif;
+            font-family: 'Arial', 'Calibri', sans-serif;
             color: #333;
-            background-color: #f5f5f5;
-            line-height: 1.5;
+            background-color: white;
+            line-height: 1.3;
+            font-size: 12px;
         }
 
         .resume-container {
             width: 8.5in;
-            height: 11in;
+            min-height: 11in;
             margin: 0 auto;
-            display: flex;
+            padding: 0.4in;
             background-color: white;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        .sidebar {
-            width: 2.4in;
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
             box-sizing: border-box;
         }
 
-        .profile {
+        .header {
             text-align: center;
             margin-bottom: 15px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
         }
 
-        .profile-name {
-            font-size: 20px;
+        .name {
+            font-size: 26px;
             font-weight: bold;
+            color: #2c3e50;
             margin-bottom: 5px;
             letter-spacing: 1px;
         }
 
-        .profile-title {
-            font-size: 14px;
-            color: #ecf0f1;
-            margin-bottom: 12px;
+        .title {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 8px;
         }
 
         .contact-info {
-            margin-bottom: 15px;
+            font-size: 11px;
+            color: #555;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 6px;
-            font-size: 12px;
+        .contact-info a {
+            color: #2c3e50;
+            text-decoration: none;
         }
 
-        .contact-icon {
-            width: 18px;
-            margin-right: 8px;
-            text-align: center;
+        .section {
+            margin-bottom: 12px;
         }
 
-        .sidebar-section {
-            margin-bottom: 15px;
-        }
-
-        .sidebar-title {
+        .section-title {
             font-size: 14px;
             font-weight: bold;
-            margin-bottom: 8px;
-            position: relative;
+            color: #2c3e50;
             text-transform: uppercase;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 2px;
+            margin-bottom: 8px;
         }
 
-        .sidebar-title:after {
-            content: "";
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 45px;
-            height: 2px;
-            background-color: #3498db;
+        .education-item, .project-item, .achievement-item {
+            margin-bottom: 10px;
         }
 
-        .sidebar-content {
+        .item-title {
+            font-weight: bold;
+            font-size: 13px;
+            color: #2c3e50;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 2px;
+        }
+
+        .item-date {
+            color: #777;
             font-size: 11px;
+        }
+
+        .item-description {
+            margin-top: 3px;
+        }
+
+        .bullet-point {
+            margin-left: 15px;
+            margin-bottom: 2px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .bullet-point:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 12px;
         }
 
         .skill-category {
@@ -103,285 +126,156 @@
 
         .skill-category-title {
             font-weight: bold;
-            margin-bottom: 4px;
-            color: #3498db;
+            font-size: 12px;
+            color: #2c3e50;
+            margin-bottom: 3px;
         }
 
         .skill-list {
-            list-style-type: none;
+            font-size: 11px;
+            line-height: 1.3;
         }
 
-        .skill-item {
-            margin-bottom: 3px;
-            position: relative;
-            padding-left: 12px;
-        }
-
-        .skill-item:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #3498db;
-        }
-
-        .main-content {
-            width: 6.1in;
-            padding: 25px;
-            box-sizing: border-box;
-            overflow-y: auto;
-        }
-
-        .main-section {
-            margin-bottom: 18px;
-        }
-
-        .main-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            position: relative;
-            text-transform: uppercase;
-        }
-
-        .main-title:after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 70px;
-            height: 2px;
-            background-color: #3498db;
-        }
-
-        .education-item, .project-item, .achievement-item {
-            margin-bottom: 10px;
-        }
-
-        .education-title, .project-title, .achievement-title {
-            font-weight: bold;
-            font-size: 14px;
-            color: #2c3e50;
-        }
-
-        .education-subtitle {
-            font-style: italic;
-            margin-bottom: 4px;
-            font-size: 12px;
-        }
-
-        .education-date, .project-date {
-            color: #7f8c8d;
-            font-size: 12px;
-        }
-
-        .project-description, .achievement-description {
-            font-size: 15px;
-            margin-top: 5px;
-        }
-
-        .project-bullet, .achievement-bullet {
-            margin-left: 15px;
-            position: relative;
-            padding-left: 15px;
-            margin-bottom: 3px;
-            font-size: 15px;
-        }
-
-        .project-bullet:before, .achievement-bullet:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #3498db;
-        }
-
-        .tools-list {
-            display: flex;
-            flex-wrap: wrap;
+        .tools-section {
             margin-top: 8px;
         }
 
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 3px;
+            font-size: 10px;
+        }
+
         .tool-item {
-            background-color: #ecf0f1;
-            border-radius: 15px;
-            padding: 2px 8px;
-            margin: 2px;
-            font-size: 11px;
-            color: #2c3e50;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 2px 4px;
+            text-align: center;
+            color: #555;
         }
 
         @media print {
             body {
                 background-color: white;
             }
-
+            
             .resume-container {
-                box-shadow: none;
                 height: 100%;
-            }
-
-            .tool-item {
-                border: 1px solid #ddd;
+                padding: 0.3in;
             }
         }
     </style>
 </head>
 <body>
     <div class="resume-container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="profile">
-                <div class="profile-name">AMIRTESH RAGHURAM</div>
-                <div class="profile-title">Biotechnology Student</div>
-            </div>
-
+        <!-- Header -->
+        <div class="header">
+            <div class="name">AMIRTESH RAGHURAM</div>
+            <div class="title">Biotechnology Student</div>
             <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">✉</div>
-                    <div><a href="mailto:amirtesh21.5@gmail.com" style="color: white; text-decoration: none;">amirtesh21.5@gmail.com</a></div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div>+91 9353724370</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">💼</div>
-                    <div><a href="https://github.com/amirtesh" target="_blank" style="color: white; text-decoration: none;">github.com/amirtesh</a></div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">🔗</div>
-                    <div><a href="https://in.linkedin.com/in/amirtesh-raghuram-90161828a" target="_blank" style="color: white; text-decoration: none;">LinkedIn Profile</a></div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">🏫</div>
-                    <div>VIT, Vellore</div>
-                </div>
+                <a href="mailto:amirtesh21.5@gmail.com">amirtesh21.5@gmail.com</a> • +91 9353724370 • 
+                <a href="https://github.com/amirtesh">github.com/amirtesh</a> • 
+                <a href="https://in.linkedin.com/in/amirtesh-raghuram-90161828a">LinkedIn Profile</a> • VIT, Vellore
             </div>
+        </div>
 
-            <div class="sidebar-section">
-                <div class="sidebar-title">Data Science and Machine Learning</div>
-                <div class="sidebar-content">
-                    <div class="skill-list">
-                        <div class="skill-item">Python (NumPy, Pandas, Scikit-learn)</div>
-                        <div class="skill-item">PyTorch & TensorFlow</div>
-                        <div class="skill-item">R (dplyr, ggplot2)</div>
-                        <div class="skill-item">Matplotlib/Seaborn</div>
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="education-item">
+                <div class="item-title">B.Tech Biotechnology</div>
+                <div class="item-subtitle">Vellore Institute of Technology, Vellore</div>
+                <div class="item-date">2023 - 2027 (Expected) | CGPA: 8.99/10</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">Data Science & Machine Learning</div>
+                        <div class="skill-list">Python (NumPy, Pandas, Scikit-learn), PyTorch & TensorFlow, R (dplyr, ggplot2), Matplotlib/Seaborn</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">Bioinformatics</div>
+                        <div class="skill-list">RNA-Seq Analysis, Single-Cell RNA-Seq (Seurat), ChIP-Seq Analysis, Variant Calling, Genome Assembly, DNA Methylation Analysis, In Silico Vaccine Design, BioPython, GWAS (PLINK)</div>
                     </div>
                 </div>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">Bioinformatics</div>
-                <div class="sidebar-content">
-                    <div class="skill-list">
-                        <div class="skill-item">RNA-Seq Analysis</div>
-                        <div class="skill-item">Single-Cell RNA-Seq (Seurat)</div>
-                        <div class="skill-item">ChIP-Seq Analysis</div>
-                        <div class="skill-item">Variant Calling</div>
-                        <div class="skill-item">Genome Assembly</div>
-                        <div class="skill-item">DNA Methylation Analysis</div>
-                        <div class="skill-item">In Silico Vaccine Design</div>
-                        <div class="skill-item">BioPython</div>
-                        <div class="skill-item">GWAS (PLINK)</div>
+                <div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">Cancer Genomics</div>
+                        <div class="skill-list">Somatic Mutation Analysis, Tumor Heterogeneity Analysis, Mutation Signature Analysis, Co-occurrence Analysis, VAF-based Clonal Identification, Oncogenic Driver Identification</div>
                     </div>
-                </div>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">Cancer Genomics</div>
-                <div class="sidebar-content">
-                    <div class="skill-list">
-                        <div class="skill-item">Somatic Mutation Analysis</div>
-                        <div class="skill-item">Tumor Heterogeneity Analysis</div>
-                        <div class="skill-item">Mutation Signature Analysis</div>
-                        <div class="skill-item">Co-occurrence Analysis</div>
-                        <div class="skill-item">VAF-based Clonal Identification</div>
-                        <div class="skill-item">Oncogenic Driver Identification</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">Computational Drug Discovery</div>
-                <div class="sidebar-content">
-                    <div class="skill-list">
-                        <div class="skill-item">Protein-Ligand Docking</div>
-                        <div class="skill-item">Molecular Dynamics (GROMACS)</div>
-                        <div class="skill-item">MMPBSA Calculations (gmx_MMPBSA)</div>
-                        <div class="skill-item">RDKit Cheminformatics</div>
-                        <div class="skill-item">PyMol,Chimera,Discovery Studio</div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">Computational Drug Discovery</div>
+                        <div class="skill-list">Protein-Ligand Docking, Molecular Dynamics (GROMACS), MMPBSA Calculations (gmx_MMPBSA), RDKit Cheminformatics, PyMol, Chimera, Discovery Studio</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="main-section">
-                <div class="main-title">Education</div>
-                <div class="education-item">
-                    <div class="education-title">B.Tech Biotechnology</div>
-                    <div class="education-subtitle">Vellore Institute of Technology, Vellore</div>
-                    <div class="education-date">2023 - 2027 (Expected)</div>
+        <!-- Ongoing Research Projects -->
+        <div class="section">
+            <div class="section-title">Ongoing Research Projects</div>
+            <div class="project-item">
+                <div class="item-title">Natural Plant-Based Inhibitors for Diabetes Treatment</div>
+                <div class="item-description">
+                    <div class="bullet-point">Collaborating with a PhD scholar to identify natural plant compounds as alpha-amylase inhibitors</div>
+                    <div class="bullet-point">Implementing computational screening, molecular docking, and binding affinity calculations</div>
+                    <div class="bullet-point">Performing molecular dynamics simulations to evaluate stability of protein-ligand complexes</div>
                 </div>
             </div>
 
-            <div class="main-section">
-                <div class="main-title">Research Projects</div>
-                <div class="project-item">
-                    <div class="project-title">Natural Plant-Based Inhibitors for Diabetes Treatment</div>
-                    <div class="project-description">
-                        <div class="project-bullet">Collaborating with a PhD scholar to identify natural plant compounds as alpha-amylase inhibitors</div>
-                        <div class="project-bullet">Implementing computational screening, molecular docking, and binding affinity calculations</div>
-                        <div class="project-bullet">Performing molecular dynamics simulations to evaluate stability of protein-ligand complexes</div>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">Natural Inhibitors for Glaucoma Treatment</div>
-                    <div class="project-description">
-                        <div class="project-bullet">Independent research identifying plant-based inhibitors of human carbonic anhydrase II</div>
-                        <div class="project-bullet">Developing a computational pipeline for high-throughput virtual screening</div>
-                        <div class="project-bullet">Conducting MD simulations with in depth analysis</div>
-                    </div>
+            <div class="project-item">
+                <div class="item-title">Natural Inhibitors for Glaucoma Treatment</div>
+                <div class="item-description">
+                    <div class="bullet-point">Independent research identifying plant-based inhibitors of human carbonic anhydrase II</div>
+                    <div class="bullet-point">Developing a computational pipeline for high-throughput virtual screening</div>
+                    <div class="bullet-point">Conducting MD simulations with in depth analysis</div>
                 </div>
             </div>
+        </div>
 
-            <div class="main-section">
-                <div class="main-title">Key Achievements</div>
-                <div class="achievement-item">
-                    <div class="achievement-bullet">Developed <a href="https://github.com/Amirtesh/Pytorch-Torchify" target="_blank">Torchify</a>, a Python library that simplifies PyTorch workflows with enhanced model API functions; published on PyPI with 2,200+ downloads to date</div>
-                    <div class="achievement-bullet">Created <a href="https://github.com/Amirtesh/Automated-Virtual-Screening" target="_blank">Automated-Virtual-Screening</a>, a binary executable that automates ligand screening using Vina, Smina, and QVina with features for file conversion, parallel docking, and results management</div>
-                    <div class="achievement-bullet">Proficient in complete computational drug discovery pipelines from virtual screening to MD simulations and binding free energy calculations</div>
-                    <div class="achievement-bullet">Proficient with next-generation sequencing data analysis and interpretation</div>
-                    <div class="achievement-bullet">Proficient in cancer genomics data analysis including somatic mutation profiling, mutation signature analysis, tumor heterogeneity analysis and clonal identification</div>
-                </div>
+        <!-- Key Achievements -->
+        <div class="section">
+            <div class="section-title">Key Achievements</div>
+            <div class="achievement-item">
+                <div class="bullet-point">Developed <a href="https://github.com/Amirtesh/Pytorch-Torchify">Torchify</a>, a Python library that simplifies PyTorch workflows with enhanced model API functions; published on PyPI with 2,500+ downloads to date</div>
+                <div class="bullet-point">Created <a href="https://github.com/Amirtesh/Automated-Virtual-Screening">Automated-Virtual-Screening</a>, a binary executable that automates ligand screening using Vina, Smina, and QVina with features for file conversion, parallel docking, and results management</div>
+                <div class="bullet-point">Proficient in complete computational drug discovery pipelines from virtual screening to MD simulations and binding free energy calculations</div>
+                <div class="bullet-point">Proficient with next-generation sequencing data analysis and interpretation</div>
+                <div class="bullet-point">Proficient in cancer genomics data analysis including somatic mutation profiling, mutation signature analysis, tumor heterogeneity analysis and clonal identification</div>
             </div>
+        </div>
 
-            <div class="main-section">
-                <div class="main-title">Bioinformatics Servers & Web Tools</div>
-                <div class="tools-list">
-                    <div class="tool-item">SwissDock</div>
-                    <div class="tool-item">SwissADME</div>
-                    <div class="tool-item">Swiss Target Prediction</div>
-                    <div class="tool-item">Swiss Similarity</div>
-                    <div class="tool-item">pkCSM</div>
-                    <div class="tool-item">ProTox 3.0</div>
-                    <div class="tool-item">MolSoft</div>
-                    <div class="tool-item">AlphaFold</div>
-                    <div class="tool-item">SWISS-MODEL</div>
-                    <div class="tool-item">I-TASSER</div>
-                    <div class="tool-item">Phyre2</div>
-                    <div class="tool-item">BLAST</div>
-                    <div class="tool-item">Galaxy</div>
-                    <div class="tool-item">HOMER</div>
-                    <div class="tool-item">KEGG</div>
-                    <div class="tool-item">BioConductor</div>
-                    <div class="tool-item">rainfallPlot</div>
-                    <div class="tool-item">oncoplot</div>
-                    <div class="tool-item">Oncodrive</div>
-                    <div class="tool-item">maftools</div>
-                </div>
+        <!-- Bioinformatics Tools -->
+        <div class="section">
+            <div class="section-title">Bioinformatics Servers & Web Tools</div>
+            <div class="tools-grid">
+                <div class="tool-item">SwissDock</div>
+                <div class="tool-item">SwissADME</div>
+                <div class="tool-item">Swiss Target</div>
+                <div class="tool-item">Swiss Similarity</div>
+                <div class="tool-item">pkCSM</div>
+                <div class="tool-item">ProTox 3.0</div>
+                <div class="tool-item">MolSoft</div>
+                <div class="tool-item">AlphaFold</div>
+                <div class="tool-item">SWISS-MODEL</div>
+                <div class="tool-item">I-TASSER</div>
+                <div class="tool-item">Phyre2</div>
+                <div class="tool-item">BLAST</div>
+                <div class="tool-item">Galaxy</div>
+                <div class="tool-item">HOMER</div>
+                <div class="tool-item">KEGG</div>
+                <div class="tool-item">BioConductor</div>
+                <div class="tool-item">rainfallPlot</div>
+                <div class="tool-item">oncoplot</div>
+                <div class="tool-item">Oncodrive</div>
+                <div class="tool-item">maftools</div>
             </div>
         </div>
     </div>
