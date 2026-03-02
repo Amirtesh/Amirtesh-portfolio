@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirtesh Raghuram - Biotechnology Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #00d4ff;
+            --accent-secondary: #ff6b6b;
+            --accent-tertiary: #4ecdc4;
+            --text-color: #ffffff;
+            --text-secondary: #a8a8a8;
+            --background-color: #0f0f1e;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--background-color) 0%, var(--primary-color) 100%);
+            background-attachment: fixed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            animation: pulse 4s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .profile-name {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary), var(--accent-tertiary));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 4s ease-in-out infinite;
+        }
+        
+        .profile-title {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .profile-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+        
+        .contact-icon {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        nav {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-link {
+            padding: 1.5rem 2rem;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary));
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-color);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            margin-bottom: 5rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+            position: relative;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary));
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            padding: 2rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+        }
+        
+        .about-text:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary), var(--accent-tertiary));
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .skill-category-title {
+            font-size: 1.4rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-item {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 2rem;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+        
+        .skill-item::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .skill-item:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        .projects-section-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin: 3rem 0 2rem 0;
+            font-weight: 600;
+            text-align: left;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .projects-section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary));
+            border-radius: 2px;
+        }
+        
+        .projects-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .project-status {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .project-body {
+            padding: 2rem;
+        }
+        
+        .project-bullet {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .project-bullet::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-tertiary);
+        }
+        
+        .documents-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .document-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .document-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(45deg, var(--accent-tertiary), var(--accent-color));
+        }
+        
+        .document-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .document-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: float 2s ease-in-out infinite;
+        }
+        
+        .document-title {
+            font-size: 1.4rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .document-description {
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary), var(--accent-tertiary));
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-color);
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .profile-name { font-size: 2.5rem; }
+            .profile-title { font-size: 1.3rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .nav-link { padding: 1rem 1.5rem; }
+            .projects-content { grid-template-columns: 1fr; }
+            .skills-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <h1 class="profile-name">Amirtesh Raghuram</h1>
+            <p class="profile-title">Biotechnology Student | Computational Biology and Structural Bioinformatics Researcher</p>
+            <div class="profile-contact">
+                <a href="mailto:amirtesh21.5@gmail.com" class="contact-item">
+                    <span class="contact-icon">✉</span> amirtesh21.5@gmail.com
+                </a>
+                <a href="tel:+919353724370" class="contact-item">
+                    <span class="contact-icon">📱</span> +91 9353724370
+                </a>
+                <a href="https://github.com/amirtesh" target="_blank" class="contact-item">
+                    <span class="contact-icon">💼</span> GitHub
+                </a>
+                <a href="https://in.linkedin.com/in/amirtesh-raghuram-90161828a" target="_blank" class="contact-item">
+                    <span class="contact-icon">🔗</span> LinkedIn
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#about" class="nav-link active">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#documents" class="nav-link">Documents</a>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a Biotechnology student at VIT Vellore specialized in computational drug discovery and structural bioinformatics. My aim is to bridge the gap between biological intuition and physical reality, replacing empirical 'best-guesses' with computationally efficient and validated models.</p>
+                    <br>
+                    <p>I am currently learning quantum-mechanical (QM) methods to validate molecular interactions, transitioning beyond classical approximations to provide thermodynamic ground truth for applications in drug design.</p>
+                </div>
+                <div class="about-text">
+                    <p>From developing PyTorch libraries with 2,500+ downloads to learning quantum-mechanical validation for complex therapeutic targets, I aim to architect the next generation of computational biology tools.</p>
+                    <br>
+                    <p>Pursuing B.Tech at VIT Vellore (2023-2027), maintaining a 9.01/10 CGPA, and dedicated to solving high-impact biological problems through rigorous modeling.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Quantum Chemistry & Design</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Density Functional Theory (ORCA)</li>
+                        <li class="skill-item">Semi-Empirical QM (xTB & GFN2-xTB)</li>
+                        <li class="skill-item">Conformer & Tautomer Ensembles (CREST)</li>
+                        <li class="skill-item">Ligand Strain Energy Validation</li>
+                        <li class="skill-item">RESP & Quantum Partial Charges</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Programming & ML</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Python (NumPy, Pandas, PyTorch)</li>
+                        <li class="skill-item">Geometric Deep Learning (GNN Concepts)</li>
+                        <li class="skill-item">R (Bio3D, ggplot2) & Bash Automation</li>
+                        <li class="skill-item">Graph Data Formulation (PyG concepts)</li>
+                        <li class="skill-item">Statistical Biophysics</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Structural Bioinformatics</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Ensemble Dynamics (ProDy, Bio3D)</li>
+                        <li class="skill-item">Validated Docking (Vina, Smina, QVina)</li>
+                        <li class="skill-item">MD Simulations (GROMACS)</li>
+                        <li class="skill-item">Free Energy (MMGBSA, gmx_MMPBSA)</li>
+                        <li class="skill-item">Protein Modeling (AlphaFold, Phyre2)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Genomics & NGS</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">RNA-Seq & Single-Cell Analysis</li>
+                        <li class="skill-item">Variant Calling & Clinical Genomics</li>
+                        <li class="skill-item">Cancer Somatic Mutation Analysis</li>
+                        <li class="skill-item">GWAS & DNA Methylation</li>
+                        <li class="skill-item">BLAST & High-Throughput Pipelines</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Drug Discovery</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Virtual Screening Workflows</li>
+                        <li class="skill-item">ADMET Prediction (SwissADME)</li>
+                        <li class="skill-item">Cheminformatics (RDKit)</li>
+                        <li class="skill-item">Thermodynamic Cycle Validation</li>
+                        <li class="skill-item">Target Discovery (KEGG, COSMIC)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            
+            <h3 class="projects-section-title">Ongoing Research Projects</h3>
+            <div class="projects-content">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Multi-Target Inhibitors for TNBC</h3>
+                        <p class="project-status">Manuscript in Submission</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Screening natural inhibitors for TNBC targets with quantum-mechanical conformer validation</div>
+                        <div class="project-bullet">Performing triplicate MD simulations with MMGBSA free energy estimation</div>
+                        <div class="project-bullet">Analyzing binding interactions through thermodynamic and dynamics-based benchmarks</div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Inhibitors for Carbonic Anhydrase II</h3>
+                        <p class="project-status">Manuscript in Submission</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Developing pipelines for high-throughput screening of Glaucoma therapeutic targets</div>
+                        <div class="project-bullet">Applying DFT-based ligand optimization and strain energy checks for lead ranking</div>
+                        <div class="project-bullet">Validating inhibitory potential through extensive GROMACS MD stability analysis</div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Natural Plant-Based Diabetes Inhibitors</h3>
+                        <p class="project-status">Manuscript in Submission</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Identifying alpha-amylase inhibitors using ensemble-based docking and quantum sampling</div>
+                        <div class="project-bullet">Utilizing ADMET profiling and MD to evaluate therapeutic safety and efficacy</div>
+                        <div class="project-bullet">Characterizing lead compounds for optimized bioavailability and pharmacokinetic profile</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="projects-section-title">Software Development</h3>
+            <div class="projects-content">
+            <div class="project-card">
+    <div class="project-header">
+        <h3 class="project-title">DynaMune: Protein Dynamics Platform</h3>
+    </div>
+    <div class="project-body">
+        <div class="project-bullet">Integrated platform based on Elastic Network Models and Normal Mode Analysis (NMA)</div>
+        <div class="project-bullet">Implements PRS, domain–hinge detection, and pocket dynamics for structural exploration</div>
+        <div class="project-bullet">Automated extraction of interface stability metrics and non-covalent interactions</div>
+        <a href="https://github.com/Amirtesh/DynaMune" target="_blank" class="button" style="margin-top: 1rem;">View Project</a>
+    </div>
+</div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Torchify Python Library</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Developed PyTorch utility library for streamlining model training and API management</div>
+                        <div class="project-bullet">Published on PyPI with 2,500+ active downloads</div>
+                        <div class="project-bullet">Designed to simplify neural network workflows for complex biological datasets</div>
+                        <a href="https://github.com/Amirtesh/Pytorch-Torchify" target="_blank" class="button" style="margin-top: 1rem;">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Automated Virtual Screening</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Parallel docking executable for Vina, Smina, and QVina with automated results management</div>
+                        <div class="project-bullet">Reduced screening time for high-throughput natural compound libraries</div>
+                        <div class="project-bullet">Implemented robust file conversion and result parsing for rapid analysis</div>
+                        <a href="https://github.com/Amirtesh/Automated-Virtual-Screening" target="_blank" class="button" style="margin-top: 1rem;">View Project</a>
+                    </div>
+                </div>
+                                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Pose-Rescorer: Deterministic MM/GBSA Rescoring Workflow</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Deterministic single-frame MM/GBSA workflow for post-docking ligand ranking using physics-based energy evaluation</div>
+                        <div class="project-bullet">Validated across four benchmark protein–ligand systems: EGFR kinase, HIV-1 protease, BRD4 bromodomain, and HSP90</div>
+                        <div class="project-bullet">Implements Rapid Perturbation Sampling (RPS) for numerical robustness analysis under coordinate perturbation</div>
+                        <a href="https://amirtesh.github.io/Pose-Rescorer" target="_blank" class="button" style="margin-top: 1rem;">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="documents">
+            <h2 class="section-title">Documents</h2>
+            <div class="documents-content">
+                <div class="document-card">
+                    <div class="document-icon">📄</div>
+                    <h3 class="document-title">Resume</h3>
+                    <p class="document-description">Condensed summary highlighting Quantum-validated drug discovery and ML engineering skills.</p>
+                    <a href="Amirtesh-Raghuram-Resume.pdf" target="_blank" class="button">View Resume</a>
+                </div>
+                
+                <div class="document-card">
+                    <div class="document-icon">📋</div>
+                    <h3 class="document-title">Curriculum Vitae</h3>
+                    <p class="document-description">Comprehensive record of research, NGS pipelines, and quantum-mechanical competencies.</p>
+                    <a href="Amirtesh-Raghuram-CV.pdf" target="_blank" class="button">View CV</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Amirtesh Raghuram. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="mailto:amirtesh21.5@gmail.com" class="footer-link">Email</a>
+                <a href="https://github.com/amirtesh" target="_blank" class="footer-link">GitHub</a>
+                <a href="https://in.linkedin.com/in/amirtesh-raghuram-90161828a" target="_blank" class="footer-link">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
