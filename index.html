@@ -374,17 +374,12 @@
 
         /* Typewriter Effect */
         .typewriter {
-            overflow: hidden;
             border-right: 3px solid var(--accent-color);
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-            display: inline-block;
-            max-width: 100%;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+            white-space: normal;
+            overflow-wrap: break-word;
+            display: inline;
+            animation: blink-caret 0.75s step-end infinite;
+            padding-right: 2px;
         }
 
         @keyframes blink-caret {
@@ -851,6 +846,7 @@
             mask-composite: exclude;
             opacity: 0;
             transition: opacity 0.5s;
+            pointer-events: none;
         }
 
         .project-card:hover::after {
@@ -1111,53 +1107,6 @@
             text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
         }
 
-        /* Glitch Effect */
-        .glitch {
-            position: relative;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 var(--accent-secondary);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 var(--accent-color);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim {
-            0% { clip: rect(34px, 9999px, 11px, 0); }
-            20% { clip: rect(68px, 9999px, 89px, 0); }
-            40% { clip: rect(12px, 9999px, 56px, 0); }
-            60% { clip: rect(54px, 9999px, 23px, 0); }
-            80% { clip: rect(9px, 9999px, 45px, 0); }
-            100% { clip: rect(67px, 9999px, 2px, 0); }
-        }
-
-        @keyframes glitch-anim2 {
-            0% { clip: rect(2px, 9999px, 88px, 0); }
-            20% { clip: rect(45px, 9999px, 12px, 0); }
-            40% { clip: rect(78px, 9999px, 34px, 0); }
-            60% { clip: rect(12px, 9999px, 67px, 0); }
-            80% { clip: rect(56px, 9999px, 9px, 0); }
-            100% { clip: rect(34px, 9999px, 56px, 0); }
-        }
-
         /* Floating Shapes */
         .floating-shape {
             position: fixed;
@@ -1354,7 +1303,7 @@
 
     <main>
         <section id="about">
-            <h2 class="section-title glitch" data-text="About Me">About Me</h2>
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>I am a Biotechnology student at VIT Vellore specialized in computational drug discovery and structural bioinformatics. My aim is to bridge the gap between biological intuition and physical reality, replacing empirical 'best-guesses' with computationally efficient and validated models.</p>
@@ -1370,7 +1319,7 @@
         </section>
 
         <section id="skills">
-            <h2 class="section-title glitch" data-text="Skills & Expertise">Skills & Expertise</h2>
+            <h2 class="section-title">Skills & Expertise</h2>
             <div class="skills-content">
                 <div class="skill-category">
                     <h3 class="skill-category-title">Quantum Chemistry & Design</h3>
@@ -1386,11 +1335,10 @@
                 <div class="skill-category">
                     <h3 class="skill-category-title">Programming & ML</h3>
                     <ul class="skill-list">
-                        <li class="skill-item">Python (NumPy, Pandas, PyTorch)</li>
-                        <li class="skill-item">Geometric Deep Learning (GNN Concepts)</li>
-                        <li class="skill-item">R (Bio3D, ggplot2) & Bash Automation</li>
-                        <li class="skill-item">Graph Data Formulation (PyG concepts)</li>
-                        <li class="skill-item">Statistical Biophysics</li>
+                        <li class="skill-item">Python (NumPy, Pandas)</li>
+                        <li class="skill-item">scikit-learn, TensorFlow, PyTorch</li>
+                        <li class="skill-item">R (Bio3D, ggplot2)</li>
+                        <li class="skill-item">Bash Automation</li>
                     </ul>
                 </div>
 
@@ -1430,10 +1378,24 @@
         </section>
 
         <section id="projects">
-            <h2 class="section-title glitch" data-text="Projects">Projects</h2>
+            <h2 class="section-title">Projects</h2>
 
             <h3 class="projects-section-title">Ongoing Research Projects</h3>
             <div class="projects-content">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">KinaseForge: Generative AI for Kinase Inhibitor Discovery</h3>
+                        <p class="project-status">Manuscript in Submission</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Fine-tuned NovoMolGen-157M on kinase-like inhibitors to generate 2.8 million novel kinase-like molecules</div>
+                        <div class="project-bullet">Built XGBoost prediction models for 25 kinases to score and rank generated compounds</div>
+                        <div class="project-bullet">Created a searchable database enabling multi-target queries — screening compounds active against specified targets and inactive against others</div>
+                        <div class="project-bullet">Platform accepts custom SMILES strings to predict activity profiles across all 25 kinases</div>
+                        <a href="https://kinaseforge.vit.ac.in/" target="_blank" class="button magnetic">Launch KinaseForge</a>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">Multi-Target Inhibitors for TNBC</h3>
@@ -1443,6 +1405,20 @@
                         <div class="project-bullet">Screening natural inhibitors for TNBC targets with stringent drug-likeness filters</div>
                         <div class="project-bullet">Performing triplicate MD simulations with MMGBSA free energy estimation</div>
                         <div class="project-bullet">Analyzing binding interactions through thermodynamic and dynamics-based benchmarks</div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Ferroptosis Predictor: Interpretable QSAR Framework</h3>
+                        <p class="project-status">Manuscript in Submission</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Developed an interpretable QSAR classification framework distinguishing ferroptosis inducers from inhibitors using a curated, balanced dataset of 1,624 compounds</div>
+                        <div class="project-bullet">Engineered 2,092 molecular descriptors and Morgan fingerprints with scaffold-based cross-validation, achieving AUROC 0.9175 and MCC 0.6617</div>
+                        <div class="project-bullet">Applied SHAP analysis to identify 75 key predictive features, translating discriminative fingerprint signals into chemically meaningful functional group motifs</div>
+                        <div class="project-bullet">Achieved 86.6% alignment when operationalizing discovered patterns as heuristic screening rules on drug-like ChEMBL compounds</div>
+                        <a href="https://github.com/Amirtesh/Ferroptosis-Predictor" target="_blank" class="button magnetic">View Repository</a>
                     </div>
                 </div>
 
@@ -1523,7 +1499,7 @@
         </section>
 
         <section id="documents">
-            <h2 class="section-title glitch" data-text="Documents">Documents</h2>
+            <h2 class="section-title">Documents</h2>
             <div class="documents-content">
                 <div class="document-card">
                     <div class="document-icon">📄</div>
@@ -1905,73 +1881,6 @@
             btn.addEventListener('mouseleave', () => {
                 btn.style.transform = '';
             });
-        });
-
-        // Text scramble effect on section titles when visible
-        class TextScramble {
-            constructor(el) {
-                this.el = el;
-                this.chars = '!<>-_\\/[]{}—=+*^?#________';
-                this.update = this.update.bind(this);
-            }
-            setText(newText) {
-                const oldText = this.el.innerText;
-                const length = Math.max(oldText.length, newText.length);
-                const promise = new Promise(resolve => this.resolve = resolve);
-                this.queue = [];
-                for (let i = 0; i < length; i++) {
-                    const from = oldText[i] || '';
-                    const to = newText[i] || '';
-                    const start = Math.floor(Math.random() * 40);
-                    const end = start + Math.floor(Math.random() * 40);
-                    this.queue.push({ from, to, start, end });
-                }
-                cancelAnimationFrame(this.frameRequest);
-                this.frame = 0;
-                this.update();
-                return promise;
-            }
-            update() {
-                let output = '';
-                let complete = 0;
-                for (let i = 0, n = this.queue.length; i < n; i++) {
-                    let { from, to, start, end, char } = this.queue[i];
-                    if (this.frame >= end) {
-                        complete++;
-                        output += to;
-                    } else if (this.frame >= start) {
-                        if (!char || Math.random() < 0.28) {
-                            char = this.chars[Math.floor(Math.random() * this.chars.length)];
-                            this.queue[i].char = char;
-                        }
-                        output += `<span style="color: var(--accent-color)">${char}</span>`;
-                    } else {
-                        output += from;
-                    }
-                }
-                this.el.innerHTML = output;
-                if (complete === this.queue.length) {
-                    this.resolve();
-                } else {
-                    this.frameRequest = requestAnimationFrame(this.update);
-                    this.frame++;
-                }
-            }
-        }
-
-        // Trigger text scramble on section visibility
-        const scrambleObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.dataset.scrambled) {
-                    entry.target.dataset.scrambled = 'true';
-                    const fx = new TextScramble(entry.target);
-                    fx.setText(entry.target.textContent);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.section-title, .projects-section-title').forEach(title => {
-            scrambleObserver.observe(title);
         });
 
         // Resize handler
