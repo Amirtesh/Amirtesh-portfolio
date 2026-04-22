@@ -7,19 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0a0a1a;
-            --secondary-color: #16213e;
-            --accent-color: #00f0ff;
-            --accent-secondary: #ff2d75;
-            --accent-tertiary: #4ecdc4;
-            --accent-purple: #a855f7;
-            --accent-green: #00ff88;
-            --text-color: #ffffff;
-            --text-secondary: #a8a8a8;
-            --background-color: #050510;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary-color: #060812;
+            --secondary-color: #0d1330;
+            /* ── Palette sampled from the protein/teal-violet background ── */
+            --accent-color: #1de9d6;        /* image teal-cyan glow          */
+            --accent-secondary: #7c6aff;    /* violet-blue (protein body)     */
+            --accent-tertiary: #5ef5e8;     /* soft mint / network lines      */
+            --accent-purple: #b48fff;       /* lavender highlight             */
+            --accent-green: #64ffda;        /* cool aquamarine                */
+            /* ── Text ── */
+            --text-color: #f0f8ff;          /* ice-white – crisp on dark bg   */
+            --text-secondary: #c8d8e8;      /* cool blue-grey – body copy     */
+            --background-color: #020409;
+            /* ── Glass / Card surfaces – slightly more opaque for legibility */
+            --card-bg: rgba(10, 14, 40, 0.55);
+            --glass-bg: rgba(10, 14, 40, 0.45);
+            --glass-border: rgba(94, 245, 232, 0.15);
         }
 
         * {
@@ -35,10 +38,54 @@
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-color);
-            background: var(--background-color);
+            background: transparent;
             line-height: 1.6;
             overflow-x: hidden;
             cursor: none;
+        }
+
+        /* ── Rotating Background Image ── */
+        /* Base fill layer — always covers full viewport */
+        .rotating-bg-base {
+            position: fixed;
+            inset: 0;
+            background: #010103;
+            z-index: -10;
+            pointer-events: none;
+        }
+
+        /* The rotating image — oversized so corners never show through */
+        /* A wrapper positions the element at center; the inner spin animation
+           only rotates, keeping translate(-50%,-50%) in its own layer. */
+        .rotating-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 130vmax;
+            height: 130vmax;
+            margin-top: -65vmax;   /* pull up by half height — avoids needing */
+            margin-left: -65vmax;  /* translate so the CSS animation is clean  */
+            background: url('Background.png') center / cover no-repeat;
+            z-index: -9;
+            pointer-events: none;
+            will-change: transform;
+            backface-visibility: hidden;
+            /* ── Continuous rotation ── */
+            animation: bgSpin 30s linear infinite;
+        }
+
+        @keyframes bgSpin {
+            from { transform: rotate(0deg);   }
+            to   { transform: rotate(360deg); }
+        }
+
+        /* Dark overlay — keeps text legible over the bright/busy image */
+        .rotating-bg-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 4, 9, 0.68);
+            z-index: -8;
+            pointer-events: none;
         }
 
         /* Custom Cursor */
@@ -1111,7 +1158,7 @@
         .floating-shape {
             position: fixed;
             pointer-events: none;
-            z-index: -1;
+            z-index: -2;
             opacity: 0.04;
             filter: blur(30px);
         }
@@ -1248,6 +1295,11 @@
     <div class="floating-shape shape-1"></div>
     <div class="floating-shape shape-2"></div>
     <div class="floating-shape shape-3"></div>
+
+    <!-- Rotating Background Image -->
+    <div class="rotating-bg-base"></div>
+    <div class="rotating-bg" id="rotatingBg"></div>
+    <div class="rotating-bg-overlay"></div>
 
     <!-- Custom Cursor -->
     <div class="cursor-main" id="cursorMain"></div>
@@ -1759,10 +1811,14 @@
             sectionObserver.observe(section);
         });
 
+        // Background rotation is handled entirely by CSS animation (bgSpin).
+
         // Parallax Zoom on Scroll
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             
+            // (Background rotation is handled by the rAF loop above)
+
             // Crazy slow zoom + spin on header
             const header = document.querySelector('.profile-container');
             if (header) {
