@@ -44,46 +44,40 @@
             cursor: none;
         }
 
-        /* ── Rotating Background Image ── */
-        /* Base fill layer — always covers full viewport */
-        .rotating-bg-base {
+        /* ── Section-Driven Background System ── */
+        .bg-base {
             position: fixed;
             inset: 0;
-            background: #010103;
+            background: #010208;
             z-index: -10;
             pointer-events: none;
         }
 
-        /* The rotating image — oversized so corners never show through */
-        /* A wrapper positions the element at center; the inner spin animation
-           only rotates, keeping translate(-50%,-50%) in its own layer. */
-        .rotating-bg {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 130vmax;
-            height: 130vmax;
-            margin-top: -65vmax;   /* pull up by half height — avoids needing */
-            margin-left: -65vmax;  /* translate so the CSS animation is clean  */
-            background: url('Background.png') center / cover no-repeat;
-            z-index: -9;
-            pointer-events: none;
-            will-change: transform;
-            backface-visibility: hidden;
-            /* ── Continuous rotation ── */
-            animation: bgSpin 30s linear infinite;
-        }
-
-        @keyframes bgSpin {
-            from { transform: rotate(0deg);   }
-            to   { transform: rotate(360deg); }
-        }
-
-        /* Dark overlay — keeps text legible over the bright/busy image */
-        .rotating-bg-overlay {
+        /* Each bg panel covers full viewport; opacity driven by JS */
+        .bg-panel {
             position: fixed;
             inset: 0;
-            background: rgba(2, 4, 9, 0.68);
+            background-size: cover;
+            background-position: center;
+            z-index: -9;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity;
+        }
+
+        .bg-panel.active { opacity: 1; }
+
+        #bg-hero    { background-image: url('bg_hero.png'); }
+        #bg-about   { background-image: url('bg_about.png'); }
+        #bg-skills  { background-image: url('bg_skills.png'); }
+        #bg-projects{ background-image: url('bg_projects.png'); }
+
+        /* Dark overlay — keeps text legible */
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 4, 9, 0.72);
             z-index: -8;
             pointer-events: none;
         }
@@ -1296,10 +1290,13 @@
     <div class="floating-shape shape-2"></div>
     <div class="floating-shape shape-3"></div>
 
-    <!-- Rotating Background Image -->
-    <div class="rotating-bg-base"></div>
-    <div class="rotating-bg" id="rotatingBg"></div>
-    <div class="rotating-bg-overlay"></div>
+    <!-- Section-Driven Background Panels -->
+    <div class="bg-base"></div>
+    <div class="bg-panel active" id="bg-hero"></div>
+    <div class="bg-panel" id="bg-about"></div>
+    <div class="bg-panel" id="bg-skills"></div>
+    <div class="bg-panel" id="bg-projects"></div>
+    <div class="bg-overlay"></div>
 
     <!-- Custom Cursor -->
     <div class="cursor-main" id="cursorMain"></div>
@@ -1307,7 +1304,7 @@
     <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- Header Hero -->
-    <header>
+    <header id="hero">
         <div class="hero-bg"></div>
         <div class="geo-shapes">
             <div class="geo-shape"></div>
@@ -1811,7 +1808,46 @@
             sectionObserver.observe(section);
         });
 
-        // Background rotation is handled entirely by CSS animation (bgSpin).
+        // ── Section-Driven Background Switcher ──
+        const bgPanels = {
+            'hero':     document.getElementById('bg-hero'),
+            'about':    document.getElementById('bg-about'),
+            'skills':   document.getElementById('bg-skills'),
+            'projects': document.getElementById('bg-projects'),
+            'documents':document.getElementById('bg-projects')  // reuse projects bg
+        };
+
+        function setActiveBg(key) {
+            Object.values(bgPanels).forEach(p => p && p.classList.remove('active'));
+            if (bgPanels[key]) bgPanels[key].classList.add('active');
+        }
+
+        // Map section IDs to bg keys
+        const sectionBgMap = {
+            'hero': 'hero',
+            'about': 'about',
+            'skills': 'skills',
+            'projects': 'projects',
+            'documents': 'projects'
+        };
+
+        // Determine which section is most visible and switch bg
+        function updateBackground() {
+            const allSections = [document.querySelector('header'), ...document.querySelectorAll('section')];
+            let bestId = 'hero';
+            let bestRatio = -1;
+            allSections.forEach(el => {
+                if (!el) return;
+                const rect = el.getBoundingClientRect();
+                const visible = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+                const ratio = visible / window.innerHeight;
+                if (ratio > bestRatio) { bestRatio = ratio; bestId = el.id || 'hero'; }
+            });
+            setActiveBg(sectionBgMap[bestId] || 'hero');
+        }
+
+        window.addEventListener('scroll', updateBackground, { passive: true });
+        updateBackground();
 
         // Parallax Zoom on Scroll
         window.addEventListener('scroll', () => {
