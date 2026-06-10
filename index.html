@@ -64,9 +64,9 @@
     <nav id="mainNav">
         <div class="nav-container">
             <a href="#about" class="nav-link active">About</a>
-            <a href="#skills" class="nav-link">Skills</a>
             <a href="#publications" class="nav-link">Publications</a>
             <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
             <a href="#documents" class="nav-link">Documents</a>
         </div>
     </nav>
@@ -97,61 +97,6 @@
             </div>
         </section>
 
-        <section id="skills" class="section">
-            <div class="section-label">// capabilities</div>
-            <h2 class="section-title">Skills &amp; Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card stagger">
-                    <h3 class="skill-card-title">Quantum Chemistry &amp; Design</h3>
-                    <ul>
-                        <li class="skill-item">Density Functional Theory (ORCA)</li>
-                        <li class="skill-item">Semi-Empirical QM (xTB &amp; GFN2-xTB)</li>
-                        <li class="skill-item">Conformer &amp; Tautomer Ensembles (CREST)</li>
-                        <li class="skill-item">Ligand Strain Energy Validation</li>
-                        <li class="skill-item">RESP &amp; Quantum Partial Charges</li>
-                    </ul>
-                </div>
-                <div class="skill-card stagger">
-                    <h3 class="skill-card-title">Programming &amp; ML</h3>
-                    <ul>
-                        <li class="skill-item">Python (NumPy, Pandas)</li>
-                        <li class="skill-item">scikit-learn, TensorFlow, PyTorch</li>
-                        <li class="skill-item">R (Bio3D, ggplot2)</li>
-                        <li class="skill-item">Bash Automation</li>
-                    </ul>
-                </div>
-                <div class="skill-card stagger">
-                    <h3 class="skill-card-title">Structural Bioinformatics</h3>
-                    <ul>
-                        <li class="skill-item">Ensemble Dynamics (ProDy, Bio3D)</li>
-                        <li class="skill-item">Molecular Docking (AutoDock Vina, Smina, QVina)</li>
-                        <li class="skill-item">MD Simulations (GROMACS)</li>
-                        <li class="skill-item">Free Energy (MM/GBSA, MM/PBSA, gmx_MMPBSA)</li>
-                        <li class="skill-item">Protein Modeling (AlphaFold2/3, SWISS-MODEL, I-TASSER)</li>
-                    </ul>
-                </div>
-                <div class="skill-card stagger">
-                    <h3 class="skill-card-title">Genomics &amp; NGS</h3>
-                    <ul>
-                        <li class="skill-item">RNA-Seq &amp; scRNA-Seq (Seurat)</li>
-                        <li class="skill-item">Variant Calling (GATK) &amp; Clinical Genomics</li>
-                        <li class="skill-item">Cancer Somatic Mutation Analysis</li>
-                        <li class="skill-item">GWAS (PLINK) &amp; DNA Methylation</li>
-                        <li class="skill-item">Sequence Alignment (BLAST, BWA)</li>
-                    </ul>
-                </div>
-                <div class="skill-card stagger">
-                    <h3 class="skill-card-title">Drug Discovery &amp; Cheminformatics</h3>
-                    <ul>
-                        <li class="skill-item">Structure-Based Drug Design (SBDD)</li>
-                        <li class="skill-item">QSAR Modeling &amp; SHAP Interpretability</li>
-                        <li class="skill-item">ADMET Profiling (SwissADME, pkCSM, ProTox 3.0)</li>
-                        <li class="skill-item">Cheminformatics (RDKit, SMILES, Morgan Fingerprints)</li>
-                        <li class="skill-item">In Silico Vaccine Design</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
         <section id="publications" class="section">
             <div class="section-label">// peer-reviewed</div>
@@ -330,6 +275,78 @@
                             classical docking scores </div><a href="https://github.com/Amirtesh/QUEST" target="_blank"
                             class="btn magnetic"><span>GitHub</span></a>
                     </div>
+                </div>
+                <div class="project-card stagger">
+                    <div class="project-header">
+                        <h3 class="project-title">Blood-Brain Barrier Permeability Predictor</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">ChemProp v2 MPNN-based BBB permeability classifier trained on
+                            the B3DB dataset (7,807 compounds)</div>
+                        <div class="project-bullet">Augmented with 7 z-scored RDKit physicochemical descriptors;
+                            MCC-optimised classification threshold of 0.58; applicability domain via Morgan FP Tanimoto
+                            similarity</div>
+                        <div class="project-bullet">Achieves &gt;0.9 across key validation and test performance
+                            metrics</div>
+                        <a href="https://bbb-prediction.streamlit.app/" target="_blank" class="btn magnetic"><span>Launch
+                                App</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="section-label">// capabilities</div>
+            <h2 class="section-title">Skills &amp; Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card stagger">
+                    <h3 class="skill-card-title">Quantum Chemistry &amp; Design</h3>
+                    <ul>
+                        <li class="skill-item">Density Functional Theory (ORCA)</li>
+                        <li class="skill-item">Semi-Empirical QM (xTB &amp; GFN2-xTB)</li>
+                        <li class="skill-item">Conformer &amp; Tautomer Ensembles (CREST)</li>
+                        <li class="skill-item">Ligand Strain Energy Validation</li>
+                        <li class="skill-item">RESP &amp; Quantum Partial Charges</li>
+                    </ul>
+                </div>
+                <div class="skill-card stagger">
+                    <h3 class="skill-card-title">Programming &amp; ML</h3>
+                    <ul>
+                        <li class="skill-item">Python (NumPy, Pandas)</li>
+                        <li class="skill-item">scikit-learn, TensorFlow, PyTorch</li>
+                        <li class="skill-item">R (Bio3D, ggplot2)</li>
+                        <li class="skill-item">Bash Automation</li>
+                    </ul>
+                </div>
+                <div class="skill-card stagger">
+                    <h3 class="skill-card-title">Structural Bioinformatics</h3>
+                    <ul>
+                        <li class="skill-item">Ensemble Dynamics (ProDy, Bio3D)</li>
+                        <li class="skill-item">Molecular Docking (AutoDock Vina, Smina, QVina)</li>
+                        <li class="skill-item">MD Simulations (GROMACS)</li>
+                        <li class="skill-item">Free Energy (MM/GBSA, MM/PBSA, gmx_MMPBSA)</li>
+                        <li class="skill-item">Protein Modeling (AlphaFold2/3, SWISS-MODEL, I-TASSER)</li>
+                    </ul>
+                </div>
+                <div class="skill-card stagger">
+                    <h3 class="skill-card-title">Genomics &amp; NGS</h3>
+                    <ul>
+                        <li class="skill-item">RNA-Seq &amp; scRNA-Seq (Seurat)</li>
+                        <li class="skill-item">Variant Calling (GATK) &amp; Clinical Genomics</li>
+                        <li class="skill-item">Cancer Somatic Mutation Analysis</li>
+                        <li class="skill-item">GWAS (PLINK) &amp; DNA Methylation</li>
+                        <li class="skill-item">Sequence Alignment (BLAST, BWA)</li>
+                    </ul>
+                </div>
+                <div class="skill-card stagger">
+                    <h3 class="skill-card-title">Drug Discovery &amp; Cheminformatics</h3>
+                    <ul>
+                        <li class="skill-item">Structure-Based Drug Design (SBDD)</li>
+                        <li class="skill-item">QSAR Modeling &amp; SHAP Interpretability</li>
+                        <li class="skill-item">ADMET Profiling (SwissADME, pkCSM, ProTox 3.0)</li>
+                        <li class="skill-item">Cheminformatics (RDKit, SMILES, Morgan Fingerprints)</li>
+                        <li class="skill-item">In Silico Vaccine Design</li>
+                    </ul>
                 </div>
             </div>
         </section>
