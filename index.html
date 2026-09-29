@@ -147,6 +147,51 @@
                 </div>
                 <div class="project-card stagger">
                     <div class="project-header">
+                        <h3 class="project-title">AI-AMP Suite: AMP Classification and De Novo Peptide Generation</h3>
+                        <p class="project-status">Manuscript in Submission</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Developed a multi-label XGBoost spectrum classifier predicting
+                            Gram-positive, Gram-negative, and antifungal activity using ESM2 embeddings and biophysical
+                            features on 14,817 curated sequences from DBAASP, dbAMP, and DRAMP</div>
+                        <div class="project-bullet">Built a binary AMP-versus-non-AMP gatekeeper classifier achieving
+                            0.947 internal AUROC and 0.912 external AUROC on the LMPred dataset (1:14.2 class
+                            imbalance)</div>
+                        <div class="project-bullet">Introduced an adversarial hard-negative stress test using 585
+                            experimentally confirmed-inactive peptides from DBAASP</div>
+                        <div class="project-bullet">Pre-trained a custom autoregressive transformer (SmallPeptideGPT,
+                            4.77M parameters) on 3.37M PeptideAtlas sequences with 93% generation novelty</div>
+                        <a href="https://ppytorch-ai-amp-webapp.ms.fun/app" target="_blank"
+                            class="btn magnetic"><span>Launch Web App</span></a>
+                        <a href="https://github.com/amirtesh/AI-AMP" target="_blank"
+                            class="btn magnetic"><span>View Repository</span></a>
+                    </div>
+                </div>
+                <div class="project-card stagger">
+                    <div class="project-header">
+                        <h3 class="project-title">AD-MTDL: Multi-Task D-MPNN and ChemProp–REINVENT4 Bridge for
+                            Alzheimer's Drug Design</h3>
+                        <p class="project-status">Manuscript in Submission</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-bullet">Trained a multi-task D-MPNN classifier in ChemProp v2.2.3 on four
+                            AD targets (AChE, BuChE, BACE1, MAO-B) using 11,297 curated ChEMBL 36 compounds with
+                            scaffold-balanced splitting</div>
+                        <div class="project-bullet">Achieved scaffold-split internal AUROC 0.853–0.986 and MCC
+                            0.535–0.884; validated on an independent PubChem BioAssay external set of 2,753
+                            compound-target pairs (AUROC 0.728–0.981)</div>
+                        <div class="project-bullet">Developed a lightweight HTTP/Flask scoring bridge decoupling
+                            ChemProp v2.x and REINVENT4 into version-isolated environments, resolving the dependency
+                            incompatibility without modifying either codebase</div>
+                        <div class="project-bullet">Conducted five 10,000-step reinforcement learning generation
+                            campaigns including a dual-target AChE+BACE1 run (215,065 unique valid SMILES; 74.3%
+                            dual-activity concordance); performed UMAP chemical space analysis</div>
+                        <a href="https://github.com/Amirtesh/AD-MTDL" target="_blank"
+                            class="btn magnetic"><span>View Repository</span></a>
+                    </div>
+                </div>
+                <div class="project-card stagger">
+                    <div class="project-header">
                         <h3 class="project-title">Multi-Target Inhibitors for TNBC</h3>
                         <p class="project-status">Manuscript in Submission</p>
                     </div>
